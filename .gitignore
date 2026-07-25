@@ -2,4 +2,4 @@ packages/
 .env
 uv.lock
 .venv
-.idea
+.idea/
