@@ -1,0 +1,12 @@
+manufacturing_datawarehouse:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: dwh
+      user: postgres
+      password: postgres
+      port: 5432
+      dbname: dwh
+      schema: analytics
+      threads: 4
