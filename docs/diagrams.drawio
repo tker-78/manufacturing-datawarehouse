@@ -1,32 +1,41 @@
-<mxfile host="drawio-plugin" modified="2026-07-25T22:50:53.288Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="22.1.22" etag="2xDvlYNpram0k0APzZYg" type="embed">
+<mxfile host="drawio-plugin" modified="2026-07-26T02:28:22.641Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="22.1.22" etag="zn5ho5Zm8g1ujmDVaFTx" type="embed">
   <diagram id="TmdHaUtuD8iiHkwojagw" name="Page-1">
-    <mxGraphModel dx="460" dy="320" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="732" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3" target="5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="3" value="Manufacturing data generator" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="170" y="120" width="120" height="50" as="geometry" />
+        <mxCell id="3" value="Manufacturing Data Generator" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5" target="6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="5" value="Staging" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="330" y="130" width="80" height="30" as="geometry" />
+          <mxGeometry x="200" y="60" width="80" height="30" as="geometry" />
         </mxCell>
         <mxCell id="10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6" target="7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="6" value="Intermediate" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="440" y="130" width="80" height="30" as="geometry" />
+          <mxGeometry x="330" y="60" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7" value="marts" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="550" y="130" width="80" height="30" as="geometry" />
+        <mxCell id="7" value="Marts" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="60" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="12" value="データ型変換&lt;br&gt;Nullの処理" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="310" y="165" width="100" height="40" as="geometry" />
+        <mxCell id="12" value="&lt;ul style=&quot;font-size: 11px;&quot;&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;データ型変換&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;命名統一&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;欠損値処理&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="165" y="80" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;ul style=&quot;font-size: 11px;&quot;&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;業務ロジックの紐付け&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Measures定義&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Join&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="295" y="80" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;ul style=&quot;font-size: 11px;&quot;&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Fact設計(粒度設計)&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;履歴管理の実装(dim, SCD2)&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Metrics定義(in marts core)&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;ダッシュボード向けKPI計算(in marts reporting)&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="75" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Data Modeling Overview" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="10" width="150" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
