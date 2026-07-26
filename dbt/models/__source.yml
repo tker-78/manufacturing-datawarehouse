@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: history
+    schema: history
+    description: manufacturing history data
+    tables:
+      - name: r_cnvact
+        description: "完成コイルの測定・検査結果"
+      - name: r_pdi
+        description: "coil production input data"
+      - name: r_trkact
+        description: "coil tracking timestamp data"
+  - name: operations
+    schema: operations
+    description: manufacturing operations data
+    tables:
+      - name: r_shift
+        description: "actual shift data"
