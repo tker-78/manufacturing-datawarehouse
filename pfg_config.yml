@@ -1,0 +1,17 @@
+devices:
+  - device_id: device-001
+    signals:
+      - signal_id: temperature
+        unit: celsius
+        generator:
+          type: sine
+          offset: 80
+          amplitude: 5
+          frequency_hz: 0.01
+          noise_stddev: 0.2
+      - signal_id: pressure
+        unit: mpa
+        generator:
+          type: normal
+          mean: 12
+          stddev: 0.3
