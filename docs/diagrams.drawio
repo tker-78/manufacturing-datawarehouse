@@ -1,41 +1,161 @@
-<mxfile host="drawio-plugin" modified="2026-07-26T02:28:22.641Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="22.1.22" etag="zn5ho5Zm8g1ujmDVaFTx" type="embed">
+<mxfile host="drawio-plugin" modified="2026-08-03T22:07:51.719Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" etag="z_8zBWlub3FkHpYnRQ14" version="22.1.22" type="embed">
   <diagram id="TmdHaUtuD8iiHkwojagw" name="Page-1">
-    <mxGraphModel dx="732" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1091" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3" target="5">
+        <mxCell id="11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="3" target="5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="3" value="Manufacturing Data Generator" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="3" value="Manufacturing Data Generator" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="50" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5" target="6">
+        <mxCell id="9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5" target="6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="5" value="Staging" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="5" value="Staging" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="200" y="60" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6" target="7">
+        <mxCell id="10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="6" target="7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="6" value="Intermediate" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="6" value="Intermediate" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="330" y="60" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7" value="Marts" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="7" value="Marts" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="490" y="60" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="12" value="&lt;ul style=&quot;font-size: 11px;&quot;&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;データ型変換&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;命名統一&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;欠損値処理&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="12" value="&lt;ul style=&quot;font-size: 11px;&quot;&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;データ型変換&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;命名統一&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;欠損値処理&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="1" vertex="1">
           <mxGeometry x="165" y="80" width="130" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="13" value="&lt;ul style=&quot;font-size: 11px;&quot;&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;業務ロジックの紐付け&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Measures定義&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Join&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="13" value="&lt;ul style=&quot;font-size: 11px;&quot;&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;業務ロジックの紐付け&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Measures定義&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Join&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="1" vertex="1">
           <mxGeometry x="295" y="80" width="170" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="15" value="&lt;ul style=&quot;font-size: 11px;&quot;&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Fact設計(粒度設計)&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;履歴管理の実装(dim, SCD2)&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Metrics定義(in marts core)&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;ダッシュボード向けKPI計算(in marts reporting)&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="15" value="&lt;ul style=&quot;font-size: 11px;&quot;&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Fact設計(粒度設計)&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;履歴管理の実装(dim, SCD2)&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;Metrics定義(in marts core)&lt;/li&gt;&lt;li style=&quot;font-size: 11px;&quot;&gt;ダッシュボード向けKPI計算(in marts reporting)&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="1" vertex="1">
           <mxGeometry x="460" y="75" width="290" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="16" value="Data Modeling Overview" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="16" value="Data Modeling Overview" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="30" y="10" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="System Overview" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="210" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="20" y="260" width="810" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="18">
+          <mxGeometry width="810" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="61" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=13;" vertex="1" parent="39">
+          <mxGeometry width="120" height="40" as="geometry">
+            <mxRectangle width="120" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="47" value="収集" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="39">
+          <mxGeometry x="120" width="163" height="40" as="geometry">
+            <mxRectangle width="163" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="68" value="移動" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="39">
+          <mxGeometry x="283" width="104" height="40" as="geometry">
+            <mxRectangle width="104" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="71" value="変換" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="39">
+          <mxGeometry x="387" width="107" height="40" as="geometry">
+            <mxRectangle width="107" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="74" value="集約" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="39">
+          <mxGeometry x="494" width="105" height="40" as="geometry">
+            <mxRectangle width="105" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="80" value="可視化" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="39">
+          <mxGeometry x="599" width="106" height="40" as="geometry">
+            <mxRectangle width="106" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="77" value="ML/AI" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="39">
+          <mxGeometry x="705" width="105" height="40" as="geometry">
+            <mxRectangle width="105" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="18">
+          <mxGeometry y="40" width="810" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="62" value="バッチ" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;" vertex="1" parent="19">
+          <mxGeometry width="120" height="40" as="geometry">
+            <mxRectangle width="120" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48" value="&lt;font size=&quot;1&quot;&gt;manufacturing-data-generator&lt;br&gt;(mdg)で補完&lt;/font&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="19">
+          <mxGeometry x="120" width="163" height="40" as="geometry">
+            <mxRectangle width="163" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="69" value="dbt" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="19">
+          <mxGeometry x="283" width="104" height="40" as="geometry">
+            <mxRectangle width="104" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72" value="dbt" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="19">
+          <mxGeometry x="387" width="107" height="40" as="geometry">
+            <mxRectangle width="107" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75" value="dbt" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="19">
+          <mxGeometry x="494" width="105" height="40" as="geometry">
+            <mxRectangle width="105" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="81" value="Superset" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="19">
+          <mxGeometry x="599" width="106" height="40" as="geometry">
+            <mxRectangle width="106" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="78" value="MLflow + scikit-learn" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="19">
+          <mxGeometry x="705" width="105" height="40" as="geometry">
+            <mxRectangle width="105" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="18">
+          <mxGeometry y="80" width="810" height="39" as="geometry" />
+        </mxCell>
+        <mxCell id="63" value="ニアリアルタイム" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;" vertex="1" parent="31">
+          <mxGeometry width="120" height="39" as="geometry">
+            <mxRectangle width="120" height="39" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="49" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;parquet-file-generator&lt;br&gt;(pfg)で補完&lt;/font&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="31">
+          <mxGeometry x="120" width="163" height="39" as="geometry">
+            <mxRectangle width="163" height="39" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="70" value="Prefect" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="31">
+          <mxGeometry x="283" width="104" height="39" as="geometry">
+            <mxRectangle width="104" height="39" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="73" value="dbt" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="31">
+          <mxGeometry x="387" width="107" height="39" as="geometry">
+            <mxRectangle width="107" height="39" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="76" value="dbt" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="31">
+          <mxGeometry x="494" width="105" height="39" as="geometry">
+            <mxRectangle width="105" height="39" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="82" value="Superset" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="31">
+          <mxGeometry x="599" width="106" height="39" as="geometry">
+            <mxRectangle width="106" height="39" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="79" value="MLflow + scikit-learn" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="31">
+          <mxGeometry x="705" width="105" height="39" as="geometry">
+            <mxRectangle width="105" height="39" as="alternateBounds" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
