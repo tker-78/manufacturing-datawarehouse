@@ -313,10 +313,11 @@ primary key (device_id, signal_id, event_time_minute)
 
 ## 6.2 Manifest Table
 
-推奨テーブル:
+推奨形式: json
+
 ```
-text
-ingestion.parquet_file_manifest
+json
+manifest.json
 ```
 推奨カラム:
 
@@ -334,7 +335,7 @@ ingestion.parquet_file_manifest
 | `row_count` | bigint | 処理行数 |
 | `error_message` | text | 失敗時のエラー詳細 |
 
-推奨 status 値:
+status 値:
 ```
 text
 detected
@@ -353,7 +354,6 @@ skipped
 
 staging table の upsert key:
 ```
-text
 device_id
 signal_id
 event_time_minute
@@ -368,7 +368,6 @@ event_time_minute
 
 例:
 ```
-text
 実行周期: 1分
 lookback window: 15分
 ```
@@ -384,23 +383,6 @@ text
 
 ---
 
-## 7.3 Affected Keys 方式
-
-より正確な実装として affected keys 方式がある。
-```
-text
-1. 新規ファイルを検知する
-2. 新規ファイルから distinct device_id, signal_id, event_time_minute を抽出する
-3. 該当 key に関係する全 source records を再読み取りする
-4. 集計値を再計算する
-5. staging table に upsert する
-```
-Lookback window 方式より正確だが、実装は複雑になる。
-
-初期段階では lookback window 方式で開始し、必要に応じて affected keys 方式に移行するのが望ましい。
-
----
-
 ## 8. 冪等性
 
 ingestion pipeline は冪等である必要がある。
@@ -412,17 +394,15 @@ ingestion pipeline は冪等である必要がある。
 - staging table への書き込みが upsert である
 - data upsert と manifest update が可能な範囲で transaction 管理されている
 
-staging data の冪等性 key:
+staging data のプライマリキー設定:
 ```
-text
 device_id
 signal_id
 event_time_minute
 ```
-manifest data の冪等性 key:
+manifest data のプライマリキー:
 ```
-text
-source_file
+source_file_name
 ```
 ---
 
@@ -430,34 +410,31 @@ source_file
 
 推奨するエラーハンドリング方針:
 
-| Failure Point | Recommended Handling |
-|---|---|
-| ファイル検知失敗 | flow を失敗させ retry |
-| Parquet 読み取り失敗 | 対象ファイルを failed として記録 |
-| DuckDB 集計失敗 | flow を失敗させ retry |
-| PostgreSQL 接続失敗 | flow を失敗させ retry |
-| temporary table load 失敗 | transaction rollback |
-| upsert 失敗 | transaction rollback |
-| manifest update 失敗 | 可能な範囲で transaction rollback |
+| Failure Point | Recommended Handling                        |
+|---|---------------------------------------------|
+| ファイル検知失敗 | flow を失敗させ flowを正常スキップ                   |
+| Parquet 読み取り失敗 | 対象ファイルを failed として記録                        |
+| DuckDB 集計失敗 | flow を失敗させ retry                            |
+| PostgreSQL 接続失敗 | flow を失敗させ retry                            |
+| temporary table load 失敗 | transaction rollback                        |
+| upsert 失敗 | transaction rollback                        |
+| manifest update 失敗 | 可能な範囲で transaction rollback                 |
 | dbt run 失敗 | downstream step を failed とし、ingestion 結果は保持 |
 
 失敗したファイルは manifest table 上で確認可能にし、手動または自動で再処理できるようにする。
 
 ---
 
+
 ## 10. 同時実行制御
 
 1分周期で flow を実行するため、同時実行を防ぐ必要がある。
 
-推奨方式:
+実装方式:
 
-1. PostgreSQL advisory lock
-2. Prefect concurrency limit
-3. PostgreSQL advisory lock と Prefect concurrency limit の併用
+* Prefect concurrency limit
 
-推奨挙動:
 ```
-text
 If lock cannot be acquired:
   skip this run
 ```
@@ -467,19 +444,19 @@ If lock cannot be acquired:
 
 ## 11. スケジューリング
 
-推奨 Prefect schedule:
+Prefect schedule:
+
 ```
-text
 Every 1 minute
 ```
-推奨 flow 名:
+
+flow 名:
 ```
-text
 ingest_parquet_signals_1min
 ```
-推奨 task 構成:
+
+task 構成:
 ```
-text
 acquire_lock
 detect_parquet_files
 register_manifest
@@ -497,58 +474,21 @@ release_lock
 
 ingestion 完了後、dbt は PostgreSQL の staging table を source として扱う。
 
-source 定義例:
-```
-yaml
-version: 2
-
-sources:
-  - name: staging
-    schema: staging
-    description: "Ingested staging tables"
-    tables:
-      - name: stg_signal_1min
-        description: "Parquet ファイルから取り込まれた1分粒度のシグナル集計データ"
-        columns:
-          - name: device_id
-            tests:
-              - not_null
-
-          - name: signal_id
-            tests:
-              - not_null
-
-          - name: event_time_minute
-            tests:
-              - not_null
-
-          - name: record_count
-            tests:
-              - not_null
-```
-downstream dbt models では以下を担当する。
-
-- device mapping
-- signal mapping
-- data quality classification
-- fact table 作成
-- mart table 作成
-
 ---
 
 ## 13. 推奨技術スタック
 
-| Area | Technology |
-|---|---|
-| Orchestration | Prefect |
-| Ingestion language | Python |
-| Parquet query engine | DuckDB |
-| PostgreSQL client | psycopg |
-| Bulk load | PostgreSQL COPY |
-| DWH storage | PostgreSQL |
-| Transformation / modeling | dbt |
-| Configuration | environment variables |
-| Logging | Prefect logs + structured application logs |
+| 分類                        | 技術                                         |
+|---------------------------|--------------------------------------------|
+| Orchestration             | Prefect                                    |
+| Ingestion language        | Python                                     |
+| Parquet query engine      | DuckDB                                     |
+| PostgreSQL client         | psycopg                                    |
+| Bulk load                 | PostgreSQL COPY                            |
+| DWH storage               | PostgreSQL                                 |
+| Transformation / modeling | dbt                                        |
+| Configuration             | environment variables                      |
+| Logging                   | Prefect logs + structured application logs |
 
 ---
 
@@ -556,7 +496,6 @@ downstream dbt models では以下を担当する。
 
 推奨 environment variables:
 ```
-text
 MDG_DATABASE_URL
 PARQUET_SIGNAL_BASE_PATH
 PARQUET_LOOKBACK_MINUTES
@@ -564,9 +503,9 @@ PREFECT_FLOW_NAME
 DBT_PROJECT_DIR
 DBT_PROFILES_DIR
 ```
+
 設定例:
-```
-dotenv
+```dotenv
 MDG_DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/dwh
 PARQUET_SIGNAL_BASE_PATH=/data-lake/raw_parquet/signals
 PARQUET_LOOKBACK_MINUTES=15
@@ -685,7 +624,6 @@ temporary table は、staging table へ upsert する前の loading buffer と�
 
 推奨パイプラインは以下である。
 ```
-text
 Python
   DuckDB で read_parquet + aggregate
   psycopg で PostgreSQL 接続
@@ -703,9 +641,9 @@ dbt
   PostgreSQL staging table を source として参照
   DWH モデリングを実行
 ```
+
 この設計により、以下の責務を明確に分離できる。
 ```
-text
 ingestion:
   Parquet ファイルの検知、読み取り、集計、PostgreSQL への格納
 
@@ -716,3 +654,5 @@ DWH modeling:
   source 定義、mapping、dimension / fact / mart 作成、test、docs
 ```
 リアルタイム寄りの Parquet データを micro-batch として安定的に取り込みつつ、PostgreSQL DWH と dbt による分析基盤へ自然に接続できる構成である。
+
+

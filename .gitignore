@@ -3,4 +3,4 @@ packages/
 uv.lock
 .venv
 .idea/
-parquet/
+data_lake/parquet/
