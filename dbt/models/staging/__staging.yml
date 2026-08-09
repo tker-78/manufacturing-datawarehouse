@@ -158,5 +158,15 @@ models:
       - name: fdt_on_to_dc_on_timestamp_utc
       - name: last_off_rm_pass
       - name: accumulated_num
+  - name: stg_shift
+    description: ""
+    columns:
+      - name: shift_code
+      - name: shift_start_timestamp_utc
+      - name: shift_end_timestamp_utc
+      - name: shift_no
+      - name: group_name
+      - name: shift_start_timestamp_local
+      - name: shift_end_timestamp_local
 
 

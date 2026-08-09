@@ -4,4 +4,4 @@
     {% else %}
         {{ custom_schema_name }}
     {% endif %}
-{% endmacro }
+{% endmacro %}
