@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fact_coil_completion
+    description: |
+      Fact table for coil completion.
+      1 ron per coil completion
+    columns:
+      - name: coil_id
+      - name: coil_completion_timestamp
+      - name: coil_weight
+      - name: coil_length
+      - name: coil_width
+      - name: coil_thickness
+      - name: coil_quality_rating
+      - name: coil_completion_duration
+      - name: product_key
+      - name: shift_key

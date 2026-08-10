@@ -3,7 +3,7 @@ with source as (
 ),
 shift as (
     select
-        c_shiftcode::text as shift_code,
+        c_shiftcode::text as shift_id,
         gt_starttime::timestamp as shift_start_timestamp_utc,
         gt_endtime::timestamp as shift_end_timestamp_utc,
         i_shiftno::int as shift_no,

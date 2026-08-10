@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: int_coil_shift_attribution
+    description: | 
+      This model is used to track coil shift attribution.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - shift_id
+              - coil_id
+    columns:
+      - name: shift_id
+        data_tests:
+          - not_null
+      - name: coil_id
+        data_tests:
+          - not_null
+      

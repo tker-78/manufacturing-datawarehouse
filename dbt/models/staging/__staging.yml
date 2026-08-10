@@ -161,7 +161,7 @@ models:
   - name: stg_shift
     description: ""
     columns:
-      - name: shift_code
+      - name: shift_id
       - name: shift_start_timestamp_utc
       - name: shift_end_timestamp_utc
       - name: shift_no

@@ -27,7 +27,10 @@ conversion as (
         c_coilshapereason::text as coil_shape_reason,
         c_stripsurface::text as strip_surface,
         c_stripsurfacereason::text as strip_surface_reason,
-        gt_ejecttm::timestamp as eject_timestamp_utc,
+        case gt_ejecttm
+            when '1970-01-01 00:00:00' then null
+            else gt_ejecttm::timestamp
+        end as eject_timestamp_utc,
         case b_isrejected
             when 1 then true
             when 0 then false
