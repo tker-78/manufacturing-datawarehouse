@@ -4,7 +4,7 @@ models:
   - name: fact_coil_completion
     description: |
       Fact table for coil completion.
-      1 ron per coil completion
+      1 row per coil completion.
     columns:
       - name: coil_id
       - name: coil_completion_timestamp
@@ -15,4 +15,14 @@ models:
       - name: coil_quality_rating
       - name: coil_completion_duration
       - name: product_key
-      - name: shift_key
+      - name: shift_id
+  - name: fact_coil_rejection
+    description: |
+      Fact table for coil rejection.
+      1 row per coil rejection.
+    columns:
+      - name: coil_id
+      - name: shift_id
+      
+      
+      
