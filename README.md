@@ -1,10 +1,30 @@
-# Usage
+# Userge
+
+## パッケージのインストール
+
+- manufacturing-data-generatorを./packages/に保存する。
+- パッケージのインストールはdockerコンテナ作成時に実行される。
+
 
 ```
 docker compose up -d
-docker compose run --rm dbt init manufacturing_datawarehouse --skip-profile-setup
-docker compose run --rm dbt mv manufacturing_datawarehouse dbt
+# docker compose run --rm dbt dbt init manufacturing_datawarehouse --skip-profile-setup
+# docker compose run --rm dbt dbt mv manufacturing_datawarehouse dbt
 ```
+
+## データの挿入
+```
+docker compose run --rm mdg mdg generate
+```
+
+
+dbtを実行
+```
+docker compose run --rm dbt dbt debug
+docker compose run --rm dbt dbt run
+```
+
+
 
 dbt docs
 

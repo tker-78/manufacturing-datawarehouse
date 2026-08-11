@@ -1,0 +1,6 @@
+FROM python:3.13-slim
+WORKDIR /usr/app
+COPY packages/manufacturing_data_generator-0.1.0-py3-none-any.whl .
+RUN pip install --no-cache-dir \
+manufacturing_data_generator-0.1.0-py3-none-any.whl
+
