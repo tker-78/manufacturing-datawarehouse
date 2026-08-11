@@ -7,13 +7,28 @@ models:
       1 row per coil completion.
     columns:
       - name: coil_id
+        data_tests:
+          - not_null
+          - unique
       - name: coil_completion_timestamp
+        data_tests:
+          - not_null
       - name: coil_weight
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                inclusive: false
       - name: coil_length
       - name: coil_width
       - name: coil_thickness
       - name: coil_quality_rating
       - name: coil_completion_duration
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                inclusive: false
       - name: product_key
       - name: shift_id
   - name: fact_coil_rejection

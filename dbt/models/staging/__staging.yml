@@ -63,19 +63,19 @@ models:
       - name: rsucalcxfrthick
       - name: is_recharged_flag
       - name: fm_del_thickness_target
-      - name: fm_del_thickness_target_organized
+      - name: fm_del_thickness_target_original
       - name: fm_del_thickness_nominal
       - name: fm_del_width_target
-      - name: fm_del_width_target_organized
+      - name: fm_del_width_target_original
       - name: fm_del_width_nominal
       - name: product_type
       - name: number_of_devide_cuts
       - name: is_divided
       - name: routing_code
-      - name: slab_thickness_cold_organized
-      - name: slab_length_cold_organized
-      - name: slab_width_cold_organized
-      - name: slab_weight_organized
+      - name: slab_thickness_cold_original
+      - name: slab_length_cold_original
+      - name: slab_width_cold_original
+      - name: slab_weight_original
       - name: sequence_no
       - name: planned_coil_id
       - name: planned_slab_id
