@@ -4,3 +4,4 @@ uv.lock
 .venv
 .idea/
 data_lake/parquet/
+docs/*.ods#
