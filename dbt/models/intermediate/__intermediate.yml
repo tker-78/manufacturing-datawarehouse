@@ -17,4 +17,6 @@ models:
       - name: coil_id
         data_tests:
           - not_null
+          - unique
+  - name: int_
       

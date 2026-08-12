@@ -38,5 +38,29 @@ L- int_coil_shift_attribution_unmatched(異常系)
 ```
 
 
+## ADR002
+
+### 問題: coil_lengthのデータがsourceにない
+
+### 背景
+
+coil_lengthのデータがsourceデータに存在しない。
+
+### 対応方法の検討
+
+重量 = 長さ x 厚み x 比重
+の式を使って長さを算出する。
+
+
+### 設計判断
+
+アルミの比重は2.7g/cmだから、
+
+```
+長さ = 重量 / (厚み x 2.7)
+```
+
+この計算をintermediateレイヤで行う。
+
 
 
