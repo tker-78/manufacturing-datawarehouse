@@ -1,6 +1,7 @@
 with source as (
     select * from {{ source('history', 'r_cnvact') }}
 ),
+
 conversion as (
     select
         c_piecename::text as picename,
@@ -9,19 +10,19 @@ conversion as (
         c_coilid::text as coil_id,
         c_palletno::text as pallet_no,
         i_dcno::int as dc_no,
-        f_fmdelthktarg::numeric(12,4) as fm_del_thickness_target,
-        f_fmdelwidtarg::numeric(12,4) as fm_del_width_target,
-        f_fmdelthkave::numeric(12,4) as fm_del_thickness_average,
-        f_fmdelthkave::numeric(12,4) as fm_del_width_average,
-        f_coildiainner::numeric(12,4) as coil_diameter_inner,
-        f_coildiaouter::numeric(12,4) as coil_diameter_outer,
+        f_fmdelthktarg::numeric(12, 4) as fm_del_thickness_target,
+        f_fmdelwidtarg::numeric(12, 4) as fm_del_width_target,
+        f_fmdelthkave::numeric(12, 4) as fm_del_thickness_average,
+        f_fmdelwidave::numeric(12, 4) as fm_del_width_average,
+        f_coildiainner::numeric(12, 4) as coil_diameter_inner,
+        f_coildiaouter::numeric(12, 4) as coil_diameter_outer,
         case b_weightopeflag
             when 1 then true
             when 0 then false
         end as weight_operation_flag,
         gt_weighttm::timestamp as weight_measured_timestamp,
-        f_coilcalwt::numeric(12,4) as coil_weight_calculated,
-        f_coilactwt::numeric(12,4) as coil_weight_actual,
+        f_coilcalwt::numeric(12, 4) as coil_weight_calculated,
+        f_coilactwt::numeric(12, 4) as coil_weight_actual,
         i_routingcode::int as routing_code,
         c_coilshape::text as coil_shape,
         c_coilshapereason::text as coil_shape_reason,
@@ -54,4 +55,6 @@ conversion as (
         i_strapnumber::int as strap_number
     from source
 )
+
 select * from conversion
+

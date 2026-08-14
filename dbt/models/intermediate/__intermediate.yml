@@ -18,5 +18,27 @@ models:
         data_tests:
           - not_null
           - unique
-  - name: int_
+  - name: int_coil_length
+    description: |
+      Length calculation from its weight and thickness
+    data_tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "weight = thickness * width * length * 2.7 * 10^(-3)"
+    columns:
+      - name: coil_id
+        data_tests:
+          - not_null
+          - unique
+      - name: thickness
+        description: "unit: mm"
+        data_tests:
+          - not_null
+          - non_negative
+      - name: width
+        description: "unit: mm"
+      - name: weight
+        description: "unit: kg"
+      - name: length
+        description: "unit: m" 
       

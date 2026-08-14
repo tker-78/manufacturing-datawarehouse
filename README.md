@@ -3,7 +3,6 @@
 ## パッケージのインストール
 
 - manufacturing-data-generatorを./packages/に保存する。
-- パッケージのインストールはdockerコンテナ作成時に実行される。
 
 
 ```
