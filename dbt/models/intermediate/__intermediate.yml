@@ -18,6 +18,15 @@ models:
         data_tests:
           - not_null
           - unique
+  - name: int_coil_shift_attribution_timestamp_utc
+    description: coil_completion_timestampが不在の場合のshift紐付け用代理timestamp
+    columns:
+      - name: coil_id
+        data_tests:
+          - not_null
+      - name: shift_attribution_timestamp_utc
+        data_tests:
+          - not_null
   - name: int_coil_length
     description: |
       Length calculation from its weight and thickness

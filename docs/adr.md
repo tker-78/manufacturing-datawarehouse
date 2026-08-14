@@ -105,6 +105,41 @@ expression: "weight = length * thickness * width * 2.7 * 10^(-3)"
 
 ---
 
+## ADR003
+
+### 問題
+
+fact_coil_completionのcoil_completion_durationが、負の値になっている箇所がある。
+
+
+### 背景
+
+原因は、データソースのeject_timestamp_utcがnullになっていること。
+
+
+### 対応方法の検討
+
+このレコード自体を落としてしまうと、生産量などの値に狂いが出る。
+しかし、シフトの紐付けはcoil完成のタイミングで行っているため、
+このままではシフトの紐付けがされない。
+
+対策としては、シフトの紐付けに用いる代理timestampをintermediateで計算する。
+
+fce_extract_timestamp_utcからdc_z_off_timestamp_utcはだいたい35分かかるから、
+それを標準時間と設定して、
+
+
+```
+altenative_eject_timestamp_utc = fce_extract_timestamp_utc + interval '35 minutes'
+```
+
+
+
+### 設計判断
+
+
+代理timestampの計算をintermediateに閉じ込めておけば、
+その判定ロジックが明確になり、保守性を担保できる。
 
 
 
