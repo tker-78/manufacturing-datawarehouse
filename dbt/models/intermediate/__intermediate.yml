@@ -24,7 +24,10 @@ models:
     data_tests:
       - dbt_utils.expression_is_true:
           arguments:
-            expression: "weight = thickness * width * length * 2.7 * 10^(-3)"
+            expression: >
+              abs(
+                weight - thickness * width * length * 2.7 * 10^(-3)
+              ) < 0.01
     columns:
       - name: coil_id
         data_tests:

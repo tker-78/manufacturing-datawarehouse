@@ -17,13 +17,13 @@ picked as (
 calculated as (
     select
         coil_id,
-        thickness::numeric(12, 4), -- unit: mm
-        width::numeric(12, 4), --unit: mm
-        weight::numeric(12, 4), --unit: kg
+        thickness::numeric, -- unit: mm
+        width::numeric, --unit: mm
+        weight::numeric, --unit: kg
         -- length: m
         (
             weight * 10 ^ 3 * 10 ^ 3 / (thickness * width * 2.7 * 10 ^ 3)
-        )::numeric(12, 4) as length
+        )::numeric as length
     from picked
 )
 

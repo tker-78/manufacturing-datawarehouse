@@ -65,5 +65,49 @@ coil_lengthのデータがsourceデータに存在しない。
 
 この計算をintermediateレイヤで行う。
 
+---
+
+## ADR003
+
+### 問題
+
+data_testでdbt_utils.expression_is_trueで式の一致が失敗する。
+
+### 背景
+
+width, thickness, weightからlengthを計算する式で、
+
+```
+expression: "weight = length * thickness * width * 2.7 * 10^(-3)"
+```
+としたときに、完全一致のテストになるため、桁落ちなどの場合にテストが失敗する。
+
+
+### 対応方法の検討
+
+許容誤差を設定してテストを実装する。
+
+
+### 設計判断
+
+```
+- name: int_coil_length
+    description: |
+      Length calculation from its weight and thickness
+    data_tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: >
+              abs(
+                weight - thickness * width * length * 2.7 * 10^(-3)
+              ) < 0.01
+```
+
+---
+
+
+
+
+
 
 
