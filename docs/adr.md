@@ -105,7 +105,7 @@ expression: "weight = length * thickness * width * 2.7 * 10^(-3)"
 
 ---
 
-## ADR003
+## ADR004
 
 ### 問題
 
@@ -126,23 +126,18 @@ fact_coil_completionのcoil_completion_durationが、負の値になっている
 対策としては、シフトの紐付けに用いる代理timestampをintermediateで計算する。
 
 fce_extract_timestamp_utcからdc_z_off_timestamp_utcはだいたい35分かかるから、
-それを標準時間と設定して、
+それを標準時間と設定する。
 
 
 ```
 altenative_eject_timestamp_utc = fce_extract_timestamp_utc + interval '35 minutes'
 ```
 
-
-
 ### 設計判断
-
 
 代理timestampの計算をintermediateに閉じ込めておけば、
 その判定ロジックが明確になり、保守性を担保できる。
 
 
-
-
-
+---
 

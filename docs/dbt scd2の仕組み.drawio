@@ -1,0 +1,49 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="3CQIjnit8ZV0pFY6RL9c">
+    <mxGraphModel dx="1063" dy="602" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c4ykxShZBWeD76zkjmKr-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="dbt snapshotを用いたSCD Type 2" vertex="1">
+          <mxGeometry height="30" width="220" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-13" edge="1" parent="1" source="c4ykxShZBWeD76zkjmKr-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="c4ykxShZBWeD76zkjmKr-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-2" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="data source" vertex="1">
+          <mxGeometry height="80" width="95" x="37.5" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-9" edge="1" parent="1" source="c4ykxShZBWeD76zkjmKr-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="c4ykxShZBWeD76zkjmKr-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-3" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="snapshot" vertex="1">
+          <mxGeometry height="80" width="95" x="400" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="これが変更されるとsnapshotに履歴として残る" vertex="1">
+          <mxGeometry height="30" width="160" x="10" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="最新のレコードは&lt;div&gt;dbt_valid_from,&amp;nbsp;&lt;/div&gt;&lt;div&gt;dbt_valid_toで判別できる&lt;/div&gt;&lt;div&gt;(dbt snapshotで自動生成される)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="260" x="317.5" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-8" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="dimension" vertex="1">
+          <mxGeometry height="80" width="95" x="610" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="snapshotから必要なデータを取り出して&lt;div&gt;dimensionとする。&lt;/div&gt;&lt;div&gt;snapshotをそのままdimension&lt;/div&gt;&lt;div&gt;として用いるのも可&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="260" x="540" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-14" edge="1" parent="1" source="c4ykxShZBWeD76zkjmKr-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="c4ykxShZBWeD76zkjmKr-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-12" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="staging" vertex="1">
+          <mxGeometry height="80" width="95" x="220" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="データ型の変換やクリーニング" vertex="1">
+          <mxGeometry height="30" width="95" x="220" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c4ykxShZBWeD76zkjmKr-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="dbt_valid_to is NULL&lt;div&gt;が最新レコード&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="260" x="330" y="260" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

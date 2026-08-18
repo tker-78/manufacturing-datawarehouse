@@ -13,7 +13,7 @@ joined as (
         tracking.fce_extract_timestamp_utc,
         tracking.dc_z_off_timestamp_utc
     from conversion
-    join tracking on conversion.coil_id = tracking.coil_id
+    left join tracking on conversion.coil_id = tracking.coil_id
 ),
 
 final as (
@@ -21,7 +21,7 @@ final as (
         joined.*,
         coalesce(
             eject_timestamp_utc,
-            fce_extract_timestamp_utc + interval '30 minutes'
+            fce_extract_timestamp_utc + interval '35 minutes'
         ) as shift_attribution_timestamp_utc
     from joined
 )

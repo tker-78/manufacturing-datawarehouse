@@ -1,0 +1,7 @@
+snapshots:
+  - name: snap_shift
+    relation: ref('stg_shift')
+    config:
+      strategy: check
+      unique_key: shift_id
+      check_cols: all

@@ -41,3 +41,9 @@ models:
     marts:
       +schema: marts
       +materialized: view
+
+snapshots:
+  manufacturing_datawarehouse:
+    +schema: snapshot
+    +strategy: check
+    +check_cols: all

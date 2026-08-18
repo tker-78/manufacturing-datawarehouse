@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_shift
+    description: shift dimension
+    columns:
+      - name: shift_key
+        description: surrogate key for shift dimension
+      - name: shift_id
+        description: unique identifier for shift
+      - name: shift_name
+      - name: ragular_shift_start_timestamp
+      - name: regular_shift_end_timestamp
+      - name: regular_shift_working_duration_in_minutes
+      - name: shift_group_name
+
+
