@@ -52,5 +52,25 @@ models:
       - name: weight
         description: "unit: kg"
       - name: length
-        description: "unit: m" 
-      
+        description: "unit: m"
+  - name: int_coil_process_duration
+    description: |
+      コイル毎のプロセス間の経過時間(加熱炉抽出~ダウンコイラoff,など)
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - coil_id
+              - process_duration_name
+    columns:
+      - name: coil_id
+        data_tests:
+          - not_null
+      - name: process_duration_name
+        data_tests:
+          - not_null
+      - name: process_duration_second
+        data_tests:
+          - not_null
+          - non_negative
+

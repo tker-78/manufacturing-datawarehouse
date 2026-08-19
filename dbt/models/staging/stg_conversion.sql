@@ -21,8 +21,8 @@ conversion as (
             when 0 then false
         end as weight_operation_flag,
         gt_weighttm::timestamp as weight_measured_timestamp,
-        f_coilcalwt::numeric(12, 4) as coil_weight_calculated,
-        f_coilactwt::numeric(12, 4) as coil_weight_actual,
+        nullif(f_coilcalwt::numeric(12, 4), 0) as coil_weight_calculated,
+        nullif(f_coilactwt::numeric(12, 4), 0) as coil_weight_actual,
         i_routingcode::int as routing_code,
         c_coilshape::text as coil_shape,
         c_coilshapereason::text as coil_shape_reason,

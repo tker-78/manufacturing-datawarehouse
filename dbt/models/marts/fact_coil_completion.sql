@@ -48,7 +48,7 @@ modified as (
         -- shift_id as shift_id,
         shift.shift_key as shift_key,
         joined.shift_attribution_timestamp_utc as coil_completion_timestamp,
-        joined.coil_weight_actual as coil_weight,
+        coalesce(joined.coil_weight_actual, joined.coil_weight_calculated) as coil_weight,
         joined.length::numeric(12, 4) as coil_length,
         joined.fm_del_width_average as coil_width,
         joined.fm_del_thickness_average as coil_thickness,

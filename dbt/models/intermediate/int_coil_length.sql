@@ -7,10 +7,7 @@ picked as (
         coil_id,
         fm_del_thickness_average as thickness,
         fm_del_width_average as width,
-        case
-            when coil_weight_actual <> 0 then coil_weight_actual
-            when coil_weight_actual = 0 then coil_weight_calculated
-        end as weight
+        coalesce(coil_weight_actual, coil_weight_calculated) as weight
     from coil
 ),
 
