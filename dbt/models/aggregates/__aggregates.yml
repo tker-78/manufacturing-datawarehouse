@@ -1,0 +1,14 @@
+models:
+  - name: agg_hourly_coil_production
+    description: |
+      hourly coil production aggregate.
+      grain: calendar hour
+      hourの途中でshiftが切り替わる場合があるため、
+      shiftはbase shift(そのtime bucket内で最初のshift)とする。
+    columns:
+      - name: hour
+        data_tests:
+          - not_null
+      - name: coil_weight
+      - name: coil_length
+      - name: coil_production_process_time

@@ -41,6 +41,9 @@ models:
     marts:
       +schema: marts
       +materialized: table
+    aggregates:
+      +schema: aggregates
+      +materialized: view
 
 snapshots:
   manufacturing_datawarehouse:
