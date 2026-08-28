@@ -80,84 +80,22 @@ models:
       - name: planned_coil_id
       - name: planned_slab_id
   - name: stg_tracking
-    description: ""
+    description: |
+      このモデルは、r_trkactの情報から、
+      各カラム名をrenameして、後続のモデルから扱いやすい形式にしたものです。
     columns:
-      - name: piecename
-      - name: timestamp_local
-      - name: timestamp_utc
-      - name: slab_id
       - name: coil_id
-      - name: serial_id
+        data_test: 
+          - not_null
+          - unique
       - name: fce_extract_timestamp_utc
-      - name: icd_on_timestamp_utc
-      - name: icd_off_timestamp_utc
-      - name: rm_ent_on_timestamp_utc
-      - name: rm_ent_off_timestamp_utc
-      - name: r1_first_on_timestamp_utc
-      - name: r1_first_off_timestamp_utc
-      - name: r1_last_on_timestamp_utc
-      - name: r1_last_off_timestamp_utc
-      - name: r1_dt_on_timestamp_utc
-      - name: r1_dt_off_timestamp_utc
-      - name: t1_divide_timestamp_utc
-      - name: fet_on_timestamp_utc
-      - name: fet_off_timestamp_utc
-      - name: t1_on_timestamp_utc
-      - name: t1_off_timestamp_utc
-      - name: t1_headcut_timestamp_utc
-      - name: t1_tailcut_timestamp_utc
-      - name: t2_on_timestamp_utc
-      - name: t2_off_timestamp_utc
-      - name: t2_headcut_timestamp_utc
-      - name: t2_tailcut_timestamp_utc
-      - name: fsb_on_timestamp_utc
-      - name: fsb_off_timestamp_utc
-      - name: fm_first_on_timestamp_utc
-      - name: fm_last_off_timestamp_utc
-      - name: mfg_on_timestamp_utc
-      - name: mfg_off_timestamp_utc
-      - name: fdt_on_timestamp_utc
-      - name: fdt_off_timestamp_utc
-      - name: r1_ez_on_timestamp_utc
-      - name: r1_z_on_timestamp_utc
-      - name: r1_dz_on_timestamp_utc
-      - name: fm_ez_on_timestamp_utc
-      - name: fm_z_on_timestamp_utc
-      - name: fm_dz_on_timestamp_utc
-      - name: dc_z_on_timestamp_utc
+        data_tests:
+          - not_null
+          - non_negative
       - name: dc_z_off_timestamp_utc
-      - name: spz_on_timestamp_utc
-      - name: spz_off_timestamp_utc
-      - name: sdz_on_timestamp_utc
-      - name: sdz_off_timestamp_utc
-      - name: dcq_stop_timestamp_utc
-      - name: dc_no
-      - name: fce_no
-      - name: fm_pass_cur
-      - name: r1_pass_cur
-      - name: reject_area
-      - name: reject_reason_code
-      - name: reject_reason
-      - name: reject_timestamp_utc
-      - name: shift_no
-      - name: shift_name
-      - name: shift_group_no
-      - name: r1_dt_middle_timestamp_utc
-      - name: reheat_time
-      - name: rolling_time
-      - name: r1_pass_no
-      - name: rm_roll_timestamp_utc
-      - name: fm_roll_timestamp_utc
-      - name: f1_on_to_on_timestamp_utc
-      - name: r1_off_to_off_timestamp_utc
-      - name: f1_off_to_on_timestamp_utc
-      - name: f1_off_to_off_timestamp_utc
-      - name: r1_dt_on_timestamp_utc
-      - name: r1_dt_off_timestamp_utc
-      - name: f1_on_to_fdt_on_timestamp_utc
-      - name: fdt_on_to_dc_on_timestamp_utc
-      - name: last_off_rm_pass
-      - name: accumulated_num
+        data_tests:
+          - not_null
+          - non_negative
   - name: stg_shift
     description: ""
     columns:

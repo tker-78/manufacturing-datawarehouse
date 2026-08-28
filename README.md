@@ -1,4 +1,4 @@
-# Userge
+# Usage
 
 ## パッケージのインストール
 
@@ -20,6 +20,7 @@ docker compose run --rm mdg mdg generate
 dbtを実行
 ```
 docker compose run --rm dbt dbt debug
+docker compose run --rm dbt dbt deps
 docker compose run --rm dbt dbt run
 ```
 
@@ -28,8 +29,13 @@ docker compose run --rm dbt dbt run
 dbt docs
 
 ```
-docker compose run --rm dbt docs generate
+docker compose run --rm dbt dbt docs generate
 docker compose run --rm --service-ports dbt dbt docs serve --host 0.0.0.0
+```
+
+superset
+```
+docker compose -f ./docker-compose-image-tag.yml up -d
 ```
 
 

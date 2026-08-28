@@ -1,6 +1,6 @@
 with conversion as (
     select * from {{ ref('stg_conversion') }}
-    where is_rejected is not true
+    where is_rejected = false
 ),
 
 attribution as (
@@ -48,7 +48,8 @@ modified as (
         -- shift_id as shift_id,
         shift.shift_key as shift_key,
         joined.shift_attribution_timestamp_utc as coil_completion_timestamp,
-        coalesce(joined.coil_weight_actual, joined.coil_weight_calculated) as coil_weight,
+        coalesce(joined.coil_weight_actual, joined.coil_weight_calculated)
+            as coil_weight,
         joined.length::numeric(12, 4) as coil_length,
         joined.fm_del_width_average as coil_width,
         joined.fm_del_thickness_average as coil_thickness,
@@ -62,7 +63,9 @@ modified as (
     left join shift
         on
             shift.shift_id = joined.shift_id
-            and shift.dbt_valid_to is null
+            and shift.dbt_valid_from <= joined.shift_attribution_timestamp_utc
+            and joined.shift_attribution_timestamp_utc
+            < coalesce(shift.dbt_valid_to, '9999-12-31'::timestamp)
 )
 
 select * from modified
