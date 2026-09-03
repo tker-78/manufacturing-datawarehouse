@@ -5,3 +5,4 @@ snapshots:
       strategy: check
       unique_key: shift_id
       check_cols: all
+      updated_at: updated_at

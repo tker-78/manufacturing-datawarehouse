@@ -62,7 +62,8 @@ modified as (
     left join shift
         on
             shift.shift_id = joined.shift_id
-            and shift.dbt_valid_to is null
+            and shift.valid_from_for_join <= joined.shift_attribution_timestamp_utc
+            and joined.shift_attribution_timestamp_utc < shift.valid_to_for_join
 )
 
 select * from modified

@@ -185,11 +185,27 @@ martsレイヤの上に、`aggregates`レイヤを作る。
 
 ### 問題
 
+snapshotから生成したdim_shiftのdbt_valid_fromが、
+snapshotの初回生成時刻に設定されるため、
+factへのshift紐付け時に時刻が一致せず、shift_keyがnullになる。
+
 ### 背景
+
+上記の通り。
 
 ### 対応方法の検討
 
+dim_shiftには、snapshotで生成されたdbt_valid_from, dbt_valid_toだけでなく、
+valid_from_for_join, valid_to_for_joinをdim_shift生成時に付与する。
+
+その際に、valid_from_for_joinは、指定の時刻(紐付け対象のレコードの最も早い時間-1年くらい)を設定し、
+valid_to_for_joinは、'9999-12-31'::timestampとする。
+
+後者の理由は、joinの際に、coalesceを使わずに済むため。
+
 ### 設計判断
+
+✅ Accepted
 
 
 ---
