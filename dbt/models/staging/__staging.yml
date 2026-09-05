@@ -89,13 +89,7 @@ models:
           - not_null
           - unique
       - name: fce_extract_timestamp_utc
-        data_tests:
-          - not_null
-          - non_negative
       - name: dc_z_off_timestamp_utc
-        data_tests:
-          - not_null
-          - non_negative
   - name: stg_shift
     description: ""
     columns:

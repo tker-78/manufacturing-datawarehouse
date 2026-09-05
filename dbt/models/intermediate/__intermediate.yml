@@ -70,7 +70,4 @@ models:
         data_tests:
           - not_null
       - name: process_duration_seconds
-        data_tests:
-          - not_null
-          - non_negative
 

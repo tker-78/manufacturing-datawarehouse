@@ -214,11 +214,23 @@ valid_to_for_joinは、'9999-12-31'::timestampとする。
 
 ### 問題
 
+データに欠損がある場合、dbtテストが永久に通らない。
+
 ### 背景
+
+intermediateの、int_coil_process_duration_process_duration_secondsがnullのレコードが存在する。
+
+しかし、data testsでnot_nullを指定しているため、テストが通らない。
 
 ### 対応方法の検討
 
+not_nullをテスト条件から削除すると、データ品質の担保ができなくなる。
+欠損はありえるため、not_nullは外す。
+ただし、intermediateのロジックに、欠損理由の記録カラムを追加する。
+
 ### 設計判断
+
+✅Accepted
 
 ---
 

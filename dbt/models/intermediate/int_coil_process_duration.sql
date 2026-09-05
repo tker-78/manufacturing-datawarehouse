@@ -15,7 +15,9 @@ final as (
         extract (epoch from (
             dc_z_off_timestamp_utc - fce_extract_timestamp_utc
             )
-        ) as process_duration_seconds
+        ) as process_duration_seconds,
+        dc_z_off_timestamp_utc is null as dc_z_off_timestamp_utc_null,
+        fce_extract_timestamp_utc is null as fce_extract_timestamp_utc_null
     from picked
 )
 select * from final
