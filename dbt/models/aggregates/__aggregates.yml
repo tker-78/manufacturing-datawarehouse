@@ -12,3 +12,28 @@ models:
       - name: coil_weight
       - name: coil_length
       - name: coil_production_process_time
+  - name: agg_coil_production_by_shift
+    description: |
+      coil production aggregate by shift.
+      grain: shift x shift_crew
+    columns:
+      - name: shift
+        data_tests:
+          - not_null
+      - name: shift_crew
+        data_tests:
+          - not_null
+      - name: coil_weight
+        data_tests:
+          - not_null
+          - non_negative
+      - name: coil_length
+        data_tests:
+          - not_null
+          - non_negative
+      - name: coil_production_process_time
+        data_tests:
+          - not_null
+          - non_negative
+
+
