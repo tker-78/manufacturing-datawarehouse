@@ -35,5 +35,22 @@ models:
         data_tests:
           - not_null
           - non_negative
+  - name: agg_coil_rejection_by_shift
+    description: |
+      coil rejection aggregate by shift.
+      grain: shift x shift_crew
+    columns:
+      - name: shift
+        data_tests:
+          - not_null
+      - name: shift_crew
+        data_tests:
+          - not_null
+      - name: coil_weight
+        data_tests:
+          - non_negative
+      - name: coil_count
+        data_tests:
+          - non_negative
 
 
